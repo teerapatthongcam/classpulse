@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="ClassPulse ระบบสาธิตติดตามและช่วยเหลือนักเรียน">
+  <title>เข้าสู่ระบบ | ClassPulse</title><link rel="stylesheet" href="styles.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.117.3/dist/umd/supabase.js"></script>
+  <script type="module" src="login.js"></script>
+</head>
+<body class="login-page">
+  <main class="login-layout">
+    <section class="login-intro">
+      <div class="brand"><div class="brand-mark">CP</div><div><strong>ClassPulse</strong><small>STUDENT SUPPORT WORKSPACE</small></div></div>
+      <div class="eyebrow">ใส่ใจทุกการเรียนรู้</div>
+      <h1>ติดตามอย่างเข้าใจ<br>ช่วยเหลืออย่างต่อเนื่อง</h1>
+      <p>พื้นที่สำหรับครูและนักเรียน เพื่อติดตามงาน นัดหมาย และบันทึกความก้าวหน้าไว้ในที่เดียว</p>
+      <div class="login-feature">◎ ติดตามงานและกำหนดนัดหมาย</div>
+      <div class="login-feature">✓ เข้าถึงข้อมูลตามบทบาทของคุณ</div>
+      <div class="login-feature">↻ บันทึกข้อมูลออนไลน์ผ่าน Supabase</div>
+      <div class="sidebar-note"><strong>ระบบ Demo เพื่อการศึกษา</strong><p>ใช้ข้อมูลสมมติเท่านั้น บัญชีทดลองต้องได้รับการสร้างและกำหนดสิทธิ์โดยผู้ดูแลก่อนใช้งาน</p></div>
+    </section>
+    <section class="panel login-card">
+      <h2>เข้าสู่ระบบ</h2><p class="subtitle">ใช้บัญชีครูหรือนักเรียนที่ผู้ดูแลจัดเตรียมไว้</p>
+      <p id="loginStatus" class="loading-state" role="status">กำลังตรวจสอบเซสชัน…</p>
+      <p id="loginError" class="error-state hidden" role="alert"></p>
+      <form id="loginForm" class="standard-form">
+        <label for="email">อีเมล</label><input id="email" type="email" autocomplete="username" required maxlength="254" placeholder="teacher@classpulse.demo">
+        <label for="password">รหัสผ่าน</label><input id="password" type="password" autocomplete="current-password" required maxlength="128">
+        <button class="btn btn-primary" id="loginBtn" type="submit" disabled>เข้าสู่ระบบ</button>
+      </form>
+      <p class="login-help">หากไม่มีบัญชีหรือลืมรหัสผ่าน กรุณาติดต่อผู้ดูแล Demo</p>
+      <p class="login-help">บัญชีทดลอง: teacher@classpulse.demo<br>student01@classpulse.demo · student02@classpulse.demo<br>ขอรหัสผ่านจากผู้ดูแลผ่านช่องทางส่วนตัว</p>
+    </section>
+  </main>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
